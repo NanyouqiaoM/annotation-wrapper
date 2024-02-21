@@ -1,12 +1,12 @@
-package com.xiyu.wrapper;
+package com.xiyu.wrapper.code;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.xiyu.wrapper.annotations.Wrapper;
-import com.xiyu.wrapper.enums.SqlType;
-import com.xiyu.wrapper.handle.AutoHandle;
-import com.xiyu.wrapper.handle.Handle;
+import com.xiyu.wrapper.code.annotations.Wrapper;
+import com.xiyu.wrapper.code.enums.SqlType;
+import com.xiyu.wrapper.code.handle.AutoHandle;
+import com.xiyu.wrapper.code.handle.Handle;
 import org.apache.ibatis.ognl.OgnlException;
 
 import java.beans.IntrospectionException;
@@ -45,7 +45,10 @@ public class WrapperGenerator {
             if (fieldPd == null) {
                 continue;
             }
-            SqlType type =wrapper.type();
+            SqlType type = wrapper.type();
+            if (type == null) {
+                type = wrapper.value();
+            }
             Class<? extends Handle<?>> handleClass = wrapper.handle();
             if (AutoHandle.class.equals(wrapper.handle())) {
                 handleClass = wrapper.type().handle;

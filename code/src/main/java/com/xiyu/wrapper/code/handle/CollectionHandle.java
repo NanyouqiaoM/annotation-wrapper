@@ -1,10 +1,10 @@
-package com.xiyu.wrapper.handle;
+package com.xiyu.wrapper.code.handle;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
-import com.xiyu.wrapper.annotations.Wrapper;
-import com.xiyu.wrapper.enums.SqlType;
-import com.xiyu.wrapper.utils.StringFormatUtil;
+import com.xiyu.wrapper.code.annotations.Wrapper;
+import com.xiyu.wrapper.code.enums.SqlType;
+import com.xiyu.wrapper.code.utils.StringFormatUtil;
 
 import java.util.Collection;
 import java.util.Collections;

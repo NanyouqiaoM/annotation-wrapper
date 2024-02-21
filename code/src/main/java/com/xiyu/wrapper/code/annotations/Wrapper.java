@@ -1,9 +1,9 @@
-package com.xiyu.wrapper.annotations;
+package com.xiyu.wrapper.code.annotations;
 
 
-import com.xiyu.wrapper.enums.SqlType;
-import com.xiyu.wrapper.handle.AutoHandle;
-import com.xiyu.wrapper.handle.Handle;
+import com.xiyu.wrapper.code.enums.SqlType;
+import com.xiyu.wrapper.code.handle.AutoHandle;
+import com.xiyu.wrapper.code.handle.Handle;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -36,7 +36,7 @@ public @interface Wrapper {
      */
     String column() default "";
 
-    SqlType type() default SqlType.EQ;
+    SqlType type();
 
     /**
      * 扩展信息 当其他字段无法满足时 自定义Handle时使用。

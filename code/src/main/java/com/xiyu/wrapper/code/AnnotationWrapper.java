@@ -1,4 +1,4 @@
-package com.xiyu.wrapper;
+package com.xiyu.wrapper.code;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
