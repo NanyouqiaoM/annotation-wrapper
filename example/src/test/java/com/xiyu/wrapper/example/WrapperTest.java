@@ -1,17 +1,13 @@
 package com.xiyu.wrapper.example;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xiyu.wrapper.example.entity.User;
 import com.xiyu.wrapper.example.mapper.UserMapper;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootTest

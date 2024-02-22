@@ -13,7 +13,7 @@ annotation-wrapper通过注解生成mybatis-plus的查询wrapper
 基于MyBatis-Plus3.5开发 理论上mybatis-plus3.0及以上版本都兼容可自行替换。
 
 #### 安装教程
-
+    maven打包上传到本地或私有仓库后直接引用
       Maven：  
         <dependency>
             <groupId>com.baomidou</groupId>

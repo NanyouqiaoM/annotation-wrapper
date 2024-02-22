@@ -8,7 +8,6 @@
         <artifactId>annotation-wrapper</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.xiyu.wrapper</groupId>
     <artifactId>code</artifactId>
     <version>1.0-SNAPSHOT</version>
 
