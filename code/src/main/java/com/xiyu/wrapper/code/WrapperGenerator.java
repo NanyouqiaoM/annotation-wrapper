@@ -46,12 +46,12 @@ public class WrapperGenerator {
                 continue;
             }
             SqlType type = wrapper.type();
-            if (type == null) {
+            if (SqlType.EQ.equals(type)) {
                 type = wrapper.value();
             }
             Class<? extends Handle<?>> handleClass = wrapper.handle();
             if (AutoHandle.class.equals(wrapper.handle())) {
-                handleClass = wrapper.type().handle;
+                handleClass = type.handle;
             }
             Handle<V> handle = getHandle(handleClass);
             Method readMethod = fieldPd.getReadMethod();
@@ -73,7 +73,7 @@ public class WrapperGenerator {
                 if (!handle.condition(value)) {
                     continue;
                 }
-                handle.apply(queryWrapper, column, value, wrapper.type(), wrapper);
+                handle.apply(queryWrapper, column, value, type, wrapper);
             } catch (Throwable e) {
                 throw new RuntimeException(e);
             }

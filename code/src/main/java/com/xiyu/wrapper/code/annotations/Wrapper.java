@@ -36,7 +36,7 @@ public @interface Wrapper {
      */
     String column() default "";
 
-    SqlType type();
+    SqlType type() default SqlType.EQ;
 
     /**
      * 扩展信息 当其他字段无法满足时 自定义Handle时使用。
