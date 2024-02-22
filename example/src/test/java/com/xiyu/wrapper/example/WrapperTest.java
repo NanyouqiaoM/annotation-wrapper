@@ -1,5 +1,6 @@
 package com.xiyu.wrapper.example;
 
+import com.xiyu.wrapper.code.WrapperGenerator;
 import com.xiyu.wrapper.example.entity.User;
 import com.xiyu.wrapper.example.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,12 @@ class WrapperTest {
         roleIdList.add(2L);
         roleIdList.add(1L);
         param.setRoleIdList(roleIdList);
+        //实现接口
         List<User> plainUsers = userMapper.selectList(param.lambdaWrapper());
+        //WrapperGenerator.generateWrapper()生成
+        List<User> plainUsers1 = userMapper.selectList(WrapperGenerator.generateWrapper(param));
         print(plainUsers);
+        print(plainUsers1);
     }
     private <T> void print(List<T> list) {
         if (!CollectionUtils.isEmpty(list)) {

@@ -18,13 +18,13 @@
             <groupId>com.xiyu.wrapper</groupId>
             <artifactId>code</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <!--如已引用mybatis-plus可排除annotation-wrapper集成的mybatis-plus
+            <!--如已引用mybatis-plus可排除annotation-wrapper集成的mybatis-plus-->
             <exclusions>
                 <exclusion>
                     <groupId>com.baomidou</groupId>
                     <artifactId>mybatis-plus</artifactId>
                 </exclusion>
-            </exclusions>-->
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
