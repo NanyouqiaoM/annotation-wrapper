@@ -24,6 +24,7 @@ public interface Handle<V> {
     }
 
     /**
+     * 简易判断
      * 是否处理
      * false 不处理
      * true处理

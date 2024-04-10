@@ -20,17 +20,22 @@ public enum SqlType {
 
     LT("<", DefaultHandle.class),
     LE("<=", DefaultHandle.class),
+
     IN("IN", CollectionHandle.class),
     NOT_IN("NOT IN", CollectionHandle.class),
+
     LIKE("LIKE '%值%'", KeywordHandle.class),
     LIKE_LEFT("LIKE '%值'", KeywordHandle.class),
     LIKE_RIGHT("LIKE '值%'", KeywordHandle.class),
 
     IN_SQL("IN SQL", SqlHandle.class),
-
     NOT_IN_SQL("NOT_IN_SQL", SqlHandle.class),
+
     IS_NULL("IS_NULL", NullHandle.class),
     IS_NOT_NULL("IS_NOT_NULL", NullHandle.class),
+
+    ORDER_ASC("ORDER BY 字段, ... ASC", OrderHandle.class),
+    ORDER_DESC("ORDER BY 字段, ... DESC", OrderHandle.class)
     ;
 
 
@@ -47,4 +52,5 @@ public enum SqlType {
         this.desc = desc;
         this.handle = handle;
     }
+
 }
