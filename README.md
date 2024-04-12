@@ -4,6 +4,7 @@
 annotation-wrapper通过注解生成mybatis-plus的查询wrapper
 
 github: https://github.com/NanyouqiaoM/annotation-wrapper
+
 gitee: https://gitee.com/anZhi_RuoSu/annotation-wrapper.git
 
 #### mybatis-plus兼容版本
