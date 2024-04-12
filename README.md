@@ -11,26 +11,29 @@ gitee: https://gitee.com/anZhi_RuoSu/annotation-wrapper.git
 基于MyBatis-Plus3.5开发 理论上mybatis-plus3.0及以上版本都兼容可自行替换。
 
 #### 安装教程
-    maven打包code模块上传到本地或私有仓库后直接引用
-      Maven：  
-        <dependency>
-             <groupId>com.xiyu.wrapper</groupId>
-            <artifactId>code</artifactId>
-            <version>最新版本</version>
-            <!--如已引用mybatis-plus可排除annotation-wrapper集成的mybatis-plus
-            <exclusions>
-                <exclusion>
-                    <groupId>com.baomidou</groupId>
-                    <artifactId>mybatis-plus</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
+
+先添加repositories节点
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+然后添加如下maven依赖
+    <dependency>
+        <groupId>com.github.NanyouqiaoM</groupId>
+        <artifactId>annotation-wrapper</artifactId>
+        <version>最新版本</version>
+    </dependency>
 
 #### 使用说明
 
-使用演示：参考https://gitee.com/anZhi_RuoSu/annotation-wrapper.git下的example模块
+使用演示：参考annotation-wrapper-example
 
-使用方式1：调用WrapperGenerator.generateWrapper();
+地址：https://github.com/NanyouqiaoM/annotation-wrapper-example
+
+使用方式1：调用WrapperGenerator.generateWrapper(obj);
 
 使用方式2：实现AnnotationWrapper接口，调用this.generateWrapper();
 
