@@ -21,6 +21,7 @@ gitee: https://gitee.com/anZhi_RuoSu/annotation-wrapper.git
         </repository>
     </repositories>
 然后添加如下maven依赖
+
     <dependency>
         <groupId>com.github.NanyouqiaoM</groupId>
         <artifactId>annotation-wrapper</artifactId>
