@@ -26,20 +26,15 @@ gitee: https://gitee.com/anZhi_RuoSu/annotation-wrapper.git
         <groupId>com.github.NanyouqiaoM</groupId>
         <artifactId>annotation-wrapper</artifactId>
         <version>最新版本</version>
-     <!--如已引用mybatis-plus可排除annotation-wrapper集成的mybatis-plus-->
-        <exclusions>
-            <exclusion>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
-            </exclusion>
-        </exclusions>
     </dependency>
 
 #### 使用说明
 
-使用演示：参考https://gitee.com/anZhi_RuoSu/annotation-wrapper.git下的example模块
+使用演示：参考annotation-wrapper-example
 
-使用方式1：调用WrapperGenerator.generateWrapper();
+地址：https://github.com/NanyouqiaoM/annotation-wrapper-example
+
+使用方式1：调用WrapperGenerator.generateWrapper(obj);
 
 使用方式2：实现AnnotationWrapper接口，调用this.generateWrapper();
 

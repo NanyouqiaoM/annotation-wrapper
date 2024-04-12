@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 public interface AnnotationWrapper {
     /**
      * 生成QueryWrapper
+     *
      * @return QueryWrapper
      */
     default <T> QueryWrapper<T> wrapper() {
@@ -18,6 +19,7 @@ public interface AnnotationWrapper {
 
     /**
      * 生成 LambdaQueryWrapper
+     *
      * @return LambdaQueryWrapper
      */
     default <T> LambdaQueryWrapper<T> lambdaWrapper() {
