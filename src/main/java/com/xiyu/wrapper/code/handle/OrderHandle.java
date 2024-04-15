@@ -2,8 +2,10 @@ package com.xiyu.wrapper.code.handle;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.xiyu.wrapper.code.annotations.Wrapper;
 import com.xiyu.wrapper.code.enums.SqlType;
+import com.xiyu.wrapper.code.utils.StringFormatUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -49,19 +51,30 @@ public class OrderHandle implements Handle<List<String>> {
         if (obj == null) {
             return Collections.emptyList();
         }
+        List<String> ret = null;
         if (List.class.isAssignableFrom(obj.getClass())) {
             List<?> list = (List<?>) obj;
             if (list.isEmpty()) {
                 return Collections.emptyList();
             }
-            return list.stream().map(Object::toString).collect(Collectors.toList());
+            ret = list.stream().map(Object::toString).collect(Collectors.toList());
         }
         if (obj instanceof String) {
-            String str= (String) obj;
-            return Stream.of(str.split(SEPARATOR))
+            String str = (String) obj;
+            ret = Stream.of(str.split(SEPARATOR))
                     .collect(Collectors.toList());
         }
-        return Collections.singletonList(obj.toString());
+        if (ret == null) {
+            ret = Collections.singletonList(obj.toString());
+        }
+
+        return ret.stream().filter(item -> {
+            if (StringUtils.isBlank(item)) {
+                return false;
+            }
+            return item.chars().allMatch(c -> Character.isLetterOrDigit(c) || c == '_');
+        }).map(StringFormatUtil::toUnderlineCase).collect(Collectors.toList());
+
     }
 
 
