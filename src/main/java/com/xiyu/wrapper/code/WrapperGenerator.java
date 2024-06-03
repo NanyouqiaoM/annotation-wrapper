@@ -78,8 +78,6 @@ public class WrapperGenerator {
                 throw new RuntimeException(e);
             }
         }
-
-
         return queryWrapper;
     }
 

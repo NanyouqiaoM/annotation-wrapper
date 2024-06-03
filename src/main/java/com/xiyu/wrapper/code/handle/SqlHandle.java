@@ -52,10 +52,10 @@ public class SqlHandle implements Handle<String> {
         String sql = String.format(wrapper.extend(), value);
         switch (sqlType) {
             case IN_SQL:
-                queryWrapper.in(column, sql);
+                queryWrapper.inSql(column, sql);
                 break;
             case NOT_IN_SQL:
-                queryWrapper.notIn(column, sql);
+                queryWrapper.notInSql(column, sql);
                 break;
             default: {
             }
