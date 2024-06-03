@@ -32,6 +32,9 @@ public class SqlHandle implements Handle<String> {
      */
     @Override
     public String convertType(Object obj) {
+        if (obj == null) {
+            return null;
+        }
         return String.valueOf(obj);
     }
 
